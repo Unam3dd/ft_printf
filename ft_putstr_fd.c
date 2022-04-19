@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,14 +13,14 @@
 #include "include/ft_printf.h"
 #include <unistd.h>
 
-int	ft_putstr_fd(char const *s, int fd, char end)
+int	ft_putstr(char const *s, char end)
 {
 	char	*tmp;
 
-	if (!s || !fd)
-		return (ft_putstr_fd("(null)", 1, 0));
+	if (!s)
+		return (ft_putstr("(null)", 0));
 	tmp = (char *)s;
 	while (*tmp && *tmp != end)
 		tmp++;
-	return (write(fd, s, tmp - s));
+	return (write(1, s, tmp - s));
 }

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnu.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student42.fr>               +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 00:06:01 by stales            #+#    #+#             */
-/*   Updated: 2022/04/13 11:31:23 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/19 21:31:17 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <limits.h>
 
-int	ft_putnbu_fd(unsigned int n, int fd)
+int	ft_putnbu(unsigned int n)
 {
 	unsigned int	i;
 
@@ -21,7 +21,7 @@ int	ft_putnbu_fd(unsigned int n, int fd)
 	if (n > UINT_MAX)
 		return (0);
 	if (n >= 10)
-		i += ft_putnbu_fd(n / 10, fd);
-	i += ft_putchar_fd((n % 10) + '0', fd);
+		i += ft_putnbu(n / 10);
+	i += ft_putchar((n % 10) + '0');
 	return (i);
 }

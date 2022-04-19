@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "include/ft_printf.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr(int n)
 {
 	int	i;
 
@@ -20,14 +20,14 @@ int	ft_putnbr_fd(int n, int fd)
 	if (n > 2147483647)
 		return (0);
 	if (n == -2147483648)
-		return (ft_putstr_fd("-2147483648", fd, 0));
+		return (ft_putstr("-2147483648", 0));
 	if (n < 0)
 	{
-		i += ft_putchar_fd('-', fd);
+		i += ft_putchar('-');
 		n = ~(n - 1);
 	}
 	if (n >= 10)
-		i += ft_putnbr_fd(n / 10, fd);
-	i += ft_putchar_fd((n % 10) + '0', fd);
+		i += ft_putnbr(n / 10);
+	i += ft_putchar((n % 10) + '0');
 	return (i);
 }
