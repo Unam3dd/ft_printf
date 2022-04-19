@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: stales <stales@student42.fr>               +#+  +:+       +#+         #
+#    By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 17:57:38 by stales            #+#    #+#              #
-#    Updated: 2022/04/12 09:46:39 by stales           ###   ########.fr        #
+#    Updated: 2022/04/19 20:26:09 by stales           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= libftprintf.a
 all:	$(LIBFT) $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -fPIE -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME):		$(OBJ)
 	ar rcs $(NAME) $(OBJ)

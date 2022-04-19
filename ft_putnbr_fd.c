@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student42.fr>               +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 19:14:03 by stales            #+#    #+#             */
-/*   Updated: 2022/04/13 11:31:39 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/19 20:26:41 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putnbr_fd(int n, int fd)
 	if (n > 2147483647)
 		return (0);
 	if (n == -2147483648)
-		return (ft_putstr_fd("-2147483648", fd));
+		return (ft_putstr_fd("-2147483648", fd, 0));
 	if (n < 0)
 	{
 		i += ft_putchar_fd('-', fd);
