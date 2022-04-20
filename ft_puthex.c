@@ -23,14 +23,12 @@ int	ft_puthex(unsigned long n, char fmt)
 	flag = 0;
 	if (fmt == 'X')
 		flag = 0x20;
-	if (!n)
-		return (ft_putchar('0'));
 	if (n > 0xF)
 		size += ft_puthex(n >> 0x4, fmt);
 	nib = (n & 0xF);
 	if (nib >= 10)
 		size += ft_putchar(((nib - 10) + 'a') ^ flag);
-	if (nib < 10)
+	else
 		size += ft_putchar((nib + '0'));
 	return (size);
 }
