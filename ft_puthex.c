@@ -15,8 +15,8 @@
 int	ft_puthex(unsigned long n, char fmt)
 {
 	unsigned int		size;
-	unsigned int		nib;
 	unsigned int		flag;
+	unsigned char		nib;
 
 	nib = 0;
 	size = 0;
