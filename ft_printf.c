@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42angouleme.fr>     +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:12:39 by stales            #+#    #+#             */
-/*   Updated: 2022/04/20 10:12:42 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/20 16:18:11 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
 int	ft_va(char *fmt, va_list a)
 {
